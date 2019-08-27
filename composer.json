@@ -1,0 +1,24 @@
+{
+    "name": "azuis/alipayglobal",
+    "description": "",
+    "keywords": ["Laravel 5", "Laravel", "Alipay Global"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Azuis",
+            "email": "azuis@azuis.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*",
+        "illuminate/events": "5.*",
+        "illuminate/config": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlipayGlobal\\Alipay\\": "src/AlipayGlobal/Alipay"
+        }
+    },
+    "minimum-stability": "stable"
+}
