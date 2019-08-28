@@ -19,7 +19,9 @@ class SdkPayment
 
 	private $sign_type = 'MD5';
 
-	private $product_code = 'NEW_WAP_OVERSEAS_SELLER';
+	private $product_code = 'NEW_OVERSEAS_SELLER';
+
+	private $transport;
 
 	private $notify_url;
 

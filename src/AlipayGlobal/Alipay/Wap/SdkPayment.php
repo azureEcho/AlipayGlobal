@@ -21,6 +21,8 @@ class SdkPayment
 
 	private $product_code = 'NEW_WAP_OVERSEAS_SELLER';
 
+	private $transport;
+
 	private $notify_url;
 
 	private $return_url;
