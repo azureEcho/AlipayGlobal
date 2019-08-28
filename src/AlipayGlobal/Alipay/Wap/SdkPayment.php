@@ -53,6 +53,8 @@ class SdkPayment
 
 	private $qr_pay_mode;
 
+	private $refer_url;
+
 	private $trade_information;
 
 	public function __construct()
@@ -75,6 +77,7 @@ class SdkPayment
 			'body' => $this->body,
 			'currency' => $this->currency,
 			'product_code' => $this->product_code,
+			'refer_url' => $this->refer_url,
 			'order_valid_time' => $this->order_valid_time,
 			'trade_information' => json_encode($this->trade_information),
 			'_input_charset' => strtolower($this->_input_charset),
