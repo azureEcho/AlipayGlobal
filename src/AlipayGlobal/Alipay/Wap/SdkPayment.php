@@ -76,7 +76,7 @@ class SdkPayment
 			'currency' => $this->currency,
 			'product_code' => $this->product_code,
 			'order_valid_time' => $this->order_valid_time,
-			'trade_information' => $this->trade_information,
+			'trade_information' => json_encode($this->trade_information),
 			'_input_charset' => strtolower($this->_input_charset),
 		);
 		if (isset($this->rmb_fee)){

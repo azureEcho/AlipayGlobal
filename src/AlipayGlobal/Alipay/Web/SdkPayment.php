@@ -79,7 +79,7 @@ class SdkPayment
 			'product_code' => $this->product_code,
 			'order_valid_time' => $this->order_valid_time,
 			'refer_url' => $this->refer_url,
-			'trade_information' => $this->trade_information,
+			'trade_information' => json_encode($this->trade_information),
 			'_input_charset' => strtolower($this->_input_charset),
 		);
 		if (isset($this->rmb_fee)){
