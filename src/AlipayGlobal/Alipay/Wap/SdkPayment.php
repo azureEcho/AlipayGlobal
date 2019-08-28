@@ -214,6 +214,11 @@ class SdkPayment
 		$this->order_valid_time = $order_valid_time;
 		return $this;
 	}
+	public function setReferUrl($refer_url)
+	{
+		$this->refer_url = $refer_url;
+		return $this;
+	}
 	public function setTradeinformation($trade_information)
 	{
 		$this->trade_information = $trade_information;
