@@ -1,5 +1,5 @@
 <?php
-namespace AlipayGlobal\Alipay\Web;
+namespace AlipayGlobal\Alipay\Wap;
 
 use Carbon\Carbon;
 
@@ -19,13 +19,11 @@ class SdkPayment
 
 	private $sign_type = 'MD5';
 
-	private $product_code = 'NEW_OVERSEAS_SELLER';
+	private $product_code = 'NEW_WAP_OVERSEAS_SELLER';
 
 	private $notify_url;
 
 	private $return_url;
-
-	private $transport;
 
 	private $out_trade_no;
 
@@ -45,7 +43,7 @@ class SdkPayment
 
 	private $body;
 
-	private $timeout_rule;
+	private $order_valid_time;
 
 	private $show_url;
 
@@ -54,8 +52,6 @@ class SdkPayment
 	private $cacert;
 
 	private $qr_pay_mode;
-
-	private $business_type;
 
 	private $refer_url;
 
@@ -76,21 +72,20 @@ class SdkPayment
 			'partner' => $this->partner,
 			'notify_url' => $this->notify_url,
 			'return_url' => $this->return_url,
-			'seller_id' => $this->partner,
 			'out_trade_no' => $this->out_trade_no,
 			'subject' => $this->subject,
 			'body' => $this->body,
 			'currency' => $this->currency,
 			'product_code' => $this->product_code,
-			'timeout_rule' => $this->timeout_rule,
-			'business_type' => $this->business_type,
+			'order_valid_time' => $this->order_valid_time,
+			'refer_url' => $this->refer_url,
+			'trade_information' => $this->trade_information,
 			'_input_charset' => strtolower($this->_input_charset),
 		);
 		if (isset($this->rmb_fee)){
 			$parameter['rmb_fee'] = $this->rmb_fee;
 		}else{
 			$parameter['total_fee'] = $this->total_fee;
-			
 		}
 
 		$para = $this->buildRequestPara($parameter);
@@ -217,9 +212,9 @@ class SdkPayment
 		$this->cacert = $cacert;
 		return $this;
 	}
-	public function setTimeout($timeout_rule)
+	public function setOrderValidTime($order_valid_time)
 	{
-		$this->timeout_rule = $timeout_rule;
+		$this->order_valid_time = $order_valid_time;
 		return $this;
 	}
 	public function setTradeinformation($trade_information)
@@ -259,7 +254,7 @@ class SdkPayment
 	private function paraFilter($para)
 	{
 		$para_filter = array();
-		foreach ($para as $key => $val){
+		while ((list ($key, $val) = each($para)) == true) {
 			if ($key == 'sign' || $key == 'sign_type' || $val == '') {
 				continue;
 			} else {
@@ -321,7 +316,6 @@ class SdkPayment
 		if (get_magic_quotes_gpc()) {
 			$arg = stripslashes($arg);
 		}
-
 		return $arg;
 	}
 
@@ -332,7 +326,7 @@ class SdkPayment
 	 */
 	private function createLinkstringUrlencode($para)
 	{
-		http_build_query($para);
+		return http_build_query($para);
 	}
 
 	/**

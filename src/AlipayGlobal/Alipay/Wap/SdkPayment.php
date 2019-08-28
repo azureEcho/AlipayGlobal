@@ -43,7 +43,7 @@ class SdkPayment
 
 	private $body;
 
-	private $timeout_rule;
+	private $order_valid_time;
 
 	private $show_url;
 
@@ -75,7 +75,7 @@ class SdkPayment
 			'body' => $this->body,
 			'currency' => $this->currency,
 			'product_code' => $this->product_code,
-			'timeout_rule' => $this->timeout_rule,
+			'order_valid_time' => $this->order_valid_time,
 			'trade_information' => $this->trade_information,
 			'_input_charset' => strtolower($this->_input_charset),
 		);
@@ -87,7 +87,6 @@ class SdkPayment
 
 		$para = $this->buildRequestPara($parameter);
 
-		if (isset())
 		return $this->__gateway_new . $this->createLinkstringUrlencode($para);
 	}
 	/**
@@ -210,9 +209,9 @@ class SdkPayment
 		$this->cacert = $cacert;
 		return $this;
 	}
-	public function setTimeout($timeout_rule)
+	public function setOrderValidTime($order_valid_time)
 	{
-		$this->timeout_rule = $timeout_rule;
+		$this->order_valid_time = $order_valid_time;
 		return $this;
 	}
 	public function setTradeinformation($trade_information)

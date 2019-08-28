@@ -72,8 +72,8 @@ class AlipayServiceProvider extends ServiceProvider
 				->setKey($app->config->get('global-alipay-web.key'))
 				->setSignType($app->config->get('global-alipay-web.sign_type'))
 				->setNotifyUrl($app->config->get('global-alipay-web.notify_url'))
-				->setReturnUrl($app->config->get('global-alipay-web.return_url'));
-				
+				->setReturnUrl($app->config->get('global-alipay-web.return_url'))
+				->setReferUrl(($app->config->get('global-alipay-web.refer_url')));
 			return $alipay;
 		});
 
@@ -85,7 +85,8 @@ class AlipayServiceProvider extends ServiceProvider
 			->setKey($app->config->get('global-alipay-web.key'))
 			->setSignType($app->config->get('global-alipay-web.sign_type'))
 			->setNotifyUrl($app->config->get('global-alipay-web.notify_url'))
-			->setReturnUrl($app->config->get('global-alipay-web.return_url'));
+			->setReturnUrl($app->config->get('global-alipay-web.return_url'))
+			->setReferUrl(($app->config->get('global-alipay-web.refer_url')));
 
 			return $alipay;
 		});
