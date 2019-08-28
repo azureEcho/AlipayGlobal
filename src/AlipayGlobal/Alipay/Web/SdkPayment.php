@@ -1,5 +1,5 @@
 <?php
-namespace AlipayGlobal\Alipay\Wap;
+namespace AlipayGlobal\Alipay\Web;
 
 use Carbon\Carbon;
 
