@@ -261,7 +261,7 @@ class SdkPayment
 	private function paraFilter($para)
 	{
 		$para_filter = array();
-		while ((list ($key, $val) = each($para)) == true) {
+		foreach ($array as $key => $val) {
 			if ($key == 'sign' || $key == 'sign_type' || $val == '') {
 				continue;
 			} else {
