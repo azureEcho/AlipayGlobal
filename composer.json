@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "5.*",
-        "illuminate/events": "5.*",
-        "illuminate/config": "5.*"
+        "php": ">=7.0.0",
+        "illuminate/support": "6.*",
+        "illuminate/events": "6.*",
+        "illuminate/config": "6.*"
     },
     "autoload": {
         "psr-4": {

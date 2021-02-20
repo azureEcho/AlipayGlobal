@@ -59,6 +59,8 @@ class SdkPayment
 
 	private $trade_information;
 
+	private $timeout_rule;
+
 	public function __construct()
 	{
 		$this->cacert = getcwd() . DIRECTORY_SEPARATOR . 'cacert.pem';
@@ -229,7 +231,10 @@ class SdkPayment
 		$this->trade_information = $trade_information;
 		return $this;
 	}
-
+	public function setTimeout_rule($timeout_rule)
+	{
+		
+	}
 	/**
 	 * 生成要请求给支付宝的参数数组
 	 * @param $para_temp 请求前的参数数组
