@@ -5,9 +5,9 @@ use Carbon\Carbon;
 
 class SdkPayment
 {
-	private $__gateway_new = 'https://intlmapi.alipay.com/gateway.do?';
+	private $__gateway_new = 'https://api-sea-global.alipayplus.com/gateway.do?';
 
-	private $__https_verify_url = 'https://intlmapi.alipay.com/gateway.do?service=notify_verify&';
+	private $__https_verify_url = 'https://api-sea-global.alipayplus.com/gateway.do?service=notify_verify&';
 
 	private $__http_verify_url = 'http://notify.alipay.com/trade/notify_query.do?';
 
@@ -21,7 +21,7 @@ class SdkPayment
 
 	private $product_code = 'NEW_WAP_OVERSEAS_SELLER';
 
-	private $transport;
+	private $transport = 'https';
 
 	private $notify_url;
 

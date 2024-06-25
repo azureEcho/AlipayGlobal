@@ -4,7 +4,7 @@ namespace AlipayGlobal\Alipay\Mobile;
 class SdkPayment
 {
 
-	private $__https_verify_url = 'https://mapi.alipay.com/gateway.do?service=notify_verify&';
+	private $__https_verify_url = 'https://api-sea-global.alipayplus.com/gateway.do?service=notify_verify&';
 
 	private $__http_verify_url = 'http://notify.alipay.com/trade/notify_query.do?';
 
@@ -42,7 +42,7 @@ class SdkPayment
 
 	private $key;
 
-	private $transport;
+	private $transport = 'https';
 
 	private $cacert;
 

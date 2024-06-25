@@ -5,9 +5,9 @@ use Carbon\Carbon;
 
 class SdkPayment
 {
-	private $__gateway_new = 'https://intlmapi.alipay.com/gateway.do?';
+	private $__gateway_new = 'https://api-sea-global.alipayplus.com/gateway.do?';
 
-	private $__https_verify_url = 'https://intlmapi.alipay.com/gateway.do?service=notify_verify&';
+	private $__https_verify_url = 'https://api-sea-global.alipayplus.com/gateway.do?service=notify_verify&';
 
 	private $__http_verify_url = 'http://notify.alipay.com/trade/notify_query.do?';
 
@@ -21,7 +21,7 @@ class SdkPayment
 
 	private $product_code = 'NEW_OVERSEAS_SELLER';
 
-	private $transport;
+	private $transport = 'https';
 
 	private $notify_url;
 
@@ -438,7 +438,8 @@ class SdkPayment
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 显示输出结果
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true); //SSL证书认证
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2); //严格认证
-		curl_setopt($curl, CURLOPT_CAINFO, $cacert_url); //证书地址
+		
+		//curl_setopt($curl, CURLOPT_CAINFO, $cacert_url); //证书地址
 		$responseText = curl_exec($curl);
 		//var_dump( curl_error($curl) );//如果执行curl过程中出现异常，可打开此开关，以便查看异常内容
 		curl_close($curl);
